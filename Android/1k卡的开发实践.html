@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="Android NFC M1卡最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘； 什么是NFC? NFC(Near Field Commu">
+  <meta name="description" content="Android NFC M1卡最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘；">
 <meta name="keywords" content="NFC,M1卡">
 <meta property="og:type" content="website">
 <meta property="og:title" content="1k卡的开发实践">
 <meta property="og:url" content="https://lisunny.github.io/Android/1k卡的开发实践.html">
 <meta property="og:site_name" content="LiYang">
-<meta property="og:description" content="Android NFC M1卡最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘； 什么是NFC? NFC(Near Field Commu">
+<meta property="og:description" content="Android NFC M1卡最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘；">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-09-09T03:28:27.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="1k卡的开发实践">
-<meta name="twitter:description" content="Android NFC M1卡最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘； 什么是NFC? NFC(Near Field Commu">
+<meta name="twitter:description" content="Android NFC M1卡最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘；">
   <link rel="canonical" href="https://lisunny.github.io/Android/1k卡的开发实践">
 
 
@@ -253,7 +253,7 @@
       
       <div class="post-body">
         
-          <h2 id="Android-NFC-M1卡"><a href="#Android-NFC-M1卡" class="headerlink" title="Android NFC M1卡"></a><code>Android</code> <code>NFC</code> <code>M1卡</code></h2><p>最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；<br>简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；<br>本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；<br>功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘；</p>
+          <h2 id="Android-NFC-M1卡"><a href="#Android-NFC-M1卡" class="headerlink" title="Android NFC M1卡"></a><code>Android</code> <code>NFC</code> <code>M1卡</code></h2><p>最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；<br>简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；<br>本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；<br>功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘；</p><a id="more"></a>
 <h2 id="什么是NFC"><a href="#什么是NFC" class="headerlink" title="什么是NFC?"></a>什么是NFC?</h2><blockquote>
 <p>NFC(Near Field Communication)即近距离无线通讯技术。2003年由飞利浦公司和索尼公司共同开发，它是一种非接触式识别和互联技术。</p>
 </blockquote>

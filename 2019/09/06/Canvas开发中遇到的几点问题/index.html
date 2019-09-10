@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友：  Bitmap 指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等) 画笔（Paint）下面我们先展开来说一下各个基友该如何使用及注意事项；Canvas画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制A">
+  <meta name="description" content="Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友： Bitmap 指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等) 画笔（Paint）下面我们先展开来说一下各个基友该如何使用及注意事项；Canvas画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制AP">
 <meta name="keywords" content="Canvas,自定义绘制">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Canvas开发中遇到的几点问题">
 <meta property="og:url" content="https://lisunny.github.io/2019/09/06/Canvas开发中遇到的几点问题/index.html">
 <meta property="og:site_name" content="LiYang">
-<meta property="og:description" content="Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友：  Bitmap 指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等) 画笔（Paint）下面我们先展开来说一下各个基友该如何使用及注意事项；Canvas画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制A">
+<meta property="og:description" content="Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友： Bitmap 指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等) 画笔（Paint）下面我们先展开来说一下各个基友该如何使用及注意事项；Canvas画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制AP">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2019-09-09T03:49:07.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Canvas开发中遇到的几点问题">
-<meta name="twitter:description" content="Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友：  Bitmap 指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等) 画笔（Paint）下面我们先展开来说一下各个基友该如何使用及注意事项；Canvas画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制A">
+<meta name="twitter:description" content="Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友： Bitmap 指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等) 画笔（Paint）下面我们先展开来说一下各个基友该如何使用及注意事项；Canvas画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制AP">
   <link rel="canonical" href="https://lisunny.github.io/2019/09/06/Canvas开发中遇到的几点问题/">
 
 
@@ -294,12 +294,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；<br>当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友：</p>
-<ul>
+        <p>Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；<br>当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友：</p><ul>
 <li>Bitmap</li>
 <li>指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等)</li>
 <li>画笔（Paint）<br>下面我们先展开来说一下各个基友该如何使用及注意事项；<h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2>画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制API（具体绘制API可取开发者平台查看）;<br>这里主要做一下Canvas几个常用且易错函数坐下具体分析：</li>
-</ul>
+</ul><a id="more"></a>
+
 <ul>
 <li>恢复画布状态<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">restore</span> <span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 

@@ -363,18 +363,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <hr>
-<p>在项目中有时某些功能是需要登录才能使用的，登录后一个跟视图，登录前一个跟视图；那就需要一个根据登录状态来修改跟视图的功能；<br>修改跟视图也就是两行代码，并不难，难点主要在于页面跳转的同事修改跟视图时的代码执行顺序；<br>修改根视图代码</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UINavigationController</span> * rootNav = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:[[MainViewController alloc] init]];</span><br><span class="line">[<span class="built_in">UIApplication</span> sharedApplication].keyWindow.rootViewController = rootNav;</span><br></pre></td></tr></table></figure>
-
-<p>页面跳转代码</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[<span class="keyword">self</span>.navigationController pushViewController:[[MainViewController alloc] init] animated:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure>
-
-<p>在小尼平安项目中遇到一个诡异的问题，同样的代码执行顺序，在controller中执行总是会崩溃；如下：<br>网络请求类中：</p>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UINavigationController</span> * rootNav = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:login];</span><br><span class="line">[<span class="built_in">UIApplication</span> sharedApplication].keyWindow.rootViewController = rootNav;</span><br><span class="line">[currentVC.navigationController popToRootViewControllerAnimated:<span class="literal">false</span>];</span><br></pre></td></tr></table></figure>
-
-<p>controller中用同样的写法就会崩溃<code>thread1:exc_breakpoint</code>，如果改成先跳转再设置跟视图就不会崩溃，具体的原因展示还没有搞清楚</p>
-
+          <hr><p>在项目中有时某些功能是需要登录才能使用的，登录后一个跟视图，登录前一个跟视图；那就需要一个根据登录状态来修改跟视图的功能；<br>修改跟视图也就是两行代码，并不难，难点主要在于页面跳转的同事修改跟视图时的代码执行顺序；<br>修改根视图代码</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UINavigationController</span> * rootNav = [[<span class="built_in">UINavigationController</span> alloc] initWithRootViewController:[[MainViewController alloc] init]];</span><br><span class="line">[<span class="built_in">UIApplication</span> sharedApplication].keyWindow.rootViewController = rootNav;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/liyang.github.io/2019/09/09/iOS关于根视图的切换问题总结/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -695,50 +693,20 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；<br>当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友：</p>
-<ul>
+          <p>Canvas字面意思为画布，Canvas为Android中绘制开发不可获取的类；<br>当然在自定义绘制过程中，紧紧使用Canvas类是不够的，还需要它的好基友：</p><ul>
 <li>Bitmap</li>
 <li>指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等)</li>
 <li>画笔（Paint）<br>下面我们先展开来说一下各个基友该如何使用及注意事项；<h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2>画布，在自定义绘制中使用频率最高的类，提供了非常非常多的图像绘制API（具体绘制API可取开发者平台查看）;<br>这里主要做一下Canvas几个常用且易错函数坐下具体分析：</li>
 </ul>
-<ul>
-<li>恢复画布状态<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">restore</span> <span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>该方法在<code>save()</code>方法调用之后调用，用于删除自上次保存调用以来对矩阵/剪辑状态的所有修改<strong>在下次操作Canvas时，提供一个全新状态的Canvas</strong>这里需要注意的是：</p>
-<ol>
-<li>恢复到上传<code>save()</code>的状态</li>
-<li><code>restore()</code>的调用次数应少于<code>save()</code>调用次数；<br>当你在使用了Canvas的<code>Rotate()</code>等方法后，要调用该方法，以防止画布旋转对后续绘制的影响</li>
-</ol>
-<ul>
-<li><p>画布旋转<br>这个方法一般用于绘制仪表刻度、指针等需要旋转绘制的内容</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** 旋转画布到指定角度（0度 开始旋转）0度在最右位置 */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span> <span class="params">(<span class="keyword">float</span> degrees)</span></span></span><br><span class="line"><span class="function"><span class="comment">/** 已传入点为中心旋转画布到指定角度（0度 开始旋转）0度在最右位置 */</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">rotate</span> <span class="params">(<span class="keyword">float</span> degrees, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> px, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> py)</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>保存画布<br>保存当前的画布操作及属性</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">save</span> <span class="params">()</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>缩放</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">scale</span> <span class="params">(<span class="keyword">float</span> sx, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> sy, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> px, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> py)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">scale</span> <span class="params">(<span class="keyword">float</span> sx, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> sy)</span></span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>平移</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">translate</span> <span class="params">(<span class="keyword">float</span> dx, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> dy)</span></span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="Bitmap"><a href="#Bitmap" class="headerlink" title="Bitmap"></a>Bitmap</h2><h3 id="指定绘画路径、曲线、文字或图片-Rect、Path、Text、Bitmap等"><a href="#指定绘画路径、曲线、文字或图片-Rect、Path、Text、Bitmap等" class="headerlink" title="指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等)"></a>指定绘画路径、曲线、文字或图片(Rect、Path、Text、Bitmap等)</h3><ol>
-<li>Rect</li>
-</ol>
-<blockquote>
-<p>在绘制曲线、圆、矩形时，可以通过指定绘制区域Rect的方式，简化绘制参数的传入；<br>例如：在绘制弧形曲线时,Canvas类提供了如下两种方法，在你想画不是特别复杂的圆弧时，我想第二种方法应该是最简单、易用得啦！</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawArc</span> <span class="params">(<span class="keyword">float</span> left, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> top, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> right, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> bottom, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> startAngle, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> sweepAngle, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">boolean</span> useCenter, </span></span></span><br><span class="line"><span class="function"><span class="params">                Paint paint)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">drawArc</span> <span class="params">(RectF oval, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> startAngle, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">float</span> sweepAngle, </span></span></span><br><span class="line"><span class="function"><span class="params">                <span class="keyword">boolean</span> useCenter, </span></span></span><br><span class="line"><span class="function"><span class="params">                Paint paint)</span></span></span><br></pre></td></tr></table></figure>
-
-<p>第二种方法中的<code>RectF</code>参数即为控制绘画曲线区域的数据类型；</p>
-<h2 id="画笔（Paint）"><a href="#画笔（Paint）" class="headerlink" title="画笔（Paint）"></a>画笔（Paint）</h2><blockquote>
-<p>你好</p>
-</blockquote>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/liyang.github.io/2019/09/06/Canvas开发中遇到的几点问题/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -802,7 +770,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-09 11:48:11" itemprop="dateModified" datetime="2019-09-09T11:48:11+08:00">2019-09-09</time>
+                <time title="Modified: 2019-09-10 10:22:13" itemprop="dateModified" datetime="2019-09-10T10:22:13+08:00">2019-09-10</time>
               </span>
             
           
@@ -831,23 +799,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；<br>简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；<br>本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；<br>功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘；</p>
-<h2 id="什么是NFC"><a href="#什么是NFC" class="headerlink" title="什么是NFC?"></a>什么是NFC?</h2><blockquote>
-<p>NFC(Near Field Communication)即近距离无线通讯技术。2003年由飞利浦公司和索尼公司共同开发，它是一种非接触式识别和互联技术。</p>
+          <blockquote>
+<p>最近工作需要学习了下AndroidNFC开发，主要是M1卡信息读取；<br>简单的卡读取当然是没有任何难度，百度一堆代码，拿来就能用；<br>本次的难点主要在后端给定keyA，然后通过keyA读取指定扇区的数据；<br>功能不难，但由于不了解M1卡同时没有深入理解NDEF数据格式，导致在开发过程中浪费了不少时间，所以记录下，以备遗忘；</p>
 </blockquote>
-<h2 id="NFC卡都有哪些种类？"><a href="#NFC卡都有哪些种类？" class="headerlink" title="NFC卡都有哪些种类？"></a>NFC卡都有哪些种类？</h2><h2 id="关于Mifare-1k卡你需要了解的相关信息"><a href="#关于Mifare-1k卡你需要了解的相关信息" class="headerlink" title="关于Mifare 1k卡你需要了解的相关信息"></a>关于Mifare 1k卡你需要了解的相关信息</h2><h3 id="M1卡的内存结构"><a href="#M1卡的内存结构" class="headerlink" title="M1卡的内存结构"></a>M1卡的内存结构</h3><ul>
-<li>M1卡共16个扇区</li>
-<li>每个扇区有4个数据块</li>
-<li>每个扇区的最后一个数据块并不保存数据</li>
-<li>0扇区的0数据块比较特殊，一般出厂写入且不可修改。（特殊的可无限擦写的UID CUID卡除外）</li>
-</ul>
-<hr>
-<img src="/liyang.github.io/2019/09/06/1k卡的开发实践/内存结构图.png">
-<img src="/liyang.github.io/2019/09/06/1k卡的开发实践/TLV块.png">
-<img src="/liyang.github.io/2019/09/06/1k卡的开发实践/NDEF记录格式.png">
-<img src="/liyang.github.io/2019/09/06/1k卡的开发实践/NDEFMessage.png">
-<hr>
-
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/liyang.github.io/2019/09/06/1k卡的开发实践/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
