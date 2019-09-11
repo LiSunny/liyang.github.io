@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说: android.database.sqliteOverview1234Contains the SQLite database management">
+  <meta name="description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说:android.database.sqliteOverview1234Contains the SQLite database management">
 <meta name="keywords" content="数据库,Sqlite3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android数据库相关操作">
 <meta property="og:url" content="https://lisunny.github.io/2019/09/11/Android数据库相关操作/index.html">
 <meta property="og:site_name" content="LiYang">
-<meta property="og:description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说: android.database.sqliteOverview1234Contains the SQLite database management">
+<meta property="og:description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说:android.database.sqliteOverview1234Contains the SQLite database management">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-11T01:14:56.250Z">
+<meta property="og:updated_time" content="2019-09-11T07:42:14.576Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android数据库相关操作">
-<meta name="twitter:description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说: android.database.sqliteOverview1234Contains the SQLite database management">
+<meta name="twitter:description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说:android.database.sqliteOverview1234Contains the SQLite database management">
   <link rel="canonical" href="https://lisunny.github.io/2019/09/11/Android数据库相关操作/">
 
 
@@ -246,7 +246,7 @@
                 
               
 
-              <time title="Created: 2019-09-11 08:37:28 / Modified: 09:14:56" itemprop="dateCreated datePublished" datetime="2019-09-11T08:37:28+08:00">2019-09-11</time>
+              <time title="Created: 2019-09-11 08:37:28 / Modified: 15:42:14" itemprop="dateCreated datePublished" datetime="2019-09-11T08:37:28+08:00">2019-09-11</time>
             </span>
           
             
@@ -286,8 +286,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，<br>这时候就不得不用到Android原生的数据库操作库<span class="label info">android.database</span>和<span class="label info">android.database.sqlite</span>,事实上这两个工具库是有不同的应用场景的，如官方文档所说:</p>
-<figure class="highlight plain"><figcaption><span>android.database.sqlite</span><a href="https://developer.android.google.cn/reference/android/database/sqlite/package-summary?hl=en" target="_blank" rel="noopener">Overview</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Contains the SQLite database management classes that an application would use to manage 		its own private database.</span><br><span class="line">Applications use these classes to manage private databases. If creating a content provider,&lt;/br&gt; you will probably have to use these classes to create and manage your own database to store content. See Content Providers to learn the conventions for implementing a content provider. If you are working with data sent to you by a provider, you do not use these SQLite classes, but instead use the generic android.database classes.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        <p>在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，<br>这时候就不得不用到Android原生的数据库操作库<span class="label info">android.database</span>和<span class="label info">android.database.sqlite</span>,事实上这两个工具库是有不同的应用场景的，如官方文档所说:</p><figure class="highlight plain"><figcaption><span>android.database.sqlite</span><a href="https://developer.android.google.cn/reference/android/database/sqlite/package-summary?hl=en" target="_blank" rel="noopener">Overview</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Contains the SQLite database management classes that an application would use to manage its own private database.</span><br><span class="line">Applications use these classes to manage private databases. If creating a content provider, you will probably have to use these classes to create and manage your own database to store content. See Content Providers to learn the conventions for implementing a content provider. If you are working with data sent to you by a provider, you do not use these SQLite classes, but instead use the generic android.database classes.</span><br><span class="line"></span><br></pre></td></tr></table></figure><a id="more"></a>
+
+
+<h2 id="android-database"><a href="#android-database" class="headerlink" title="android.database"></a>android.database</h2><h2 id="android-database-sqlite"><a href="#android-database-sqlite" class="headerlink" title="android.database.sqlite"></a>android.database.sqlite</h2><h3 id="SqliteDatabase"><a href="#SqliteDatabase" class="headerlink" title="SqliteDatabase"></a>SqliteDatabase</h3><p>数据库管理类，可用来创建、删除、执行SQL命令和其他常见数据库管理任务</p>
+
     </div>
 
     
@@ -375,6 +378,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#android-database"><span class="nav-number">1.</span> <span class="nav-text">android.database</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#android-database-sqlite"><span class="nav-number">2.</span> <span class="nav-text">android.database.sqlite</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SqliteDatabase"><span class="nav-number">2.1.</span> <span class="nav-text">SqliteDatabase</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 

@@ -55,18 +55,18 @@
   };
 </script>
 
-  <meta name="description" content="相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在Android7.0之后，Google更是取消了file://这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那URI与URi到底有什么区别和联系呢？让我们一起来看下官方文档是怎么介绍的：">
+  <meta name="description" content="相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在Android7.0之后，Google更是取消了file://这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那URI与URi到底有什么区别和联系呢？让我们看一下两者官方文档的定义之间的对比：   URI URi    统一标识符引用，更多的是一种格式规范 不可变的URI引用，可以理解为一个UR">
 <meta name="keywords" content="URI,URi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="URI与URi傻傻分不清楚？">
 <meta property="og:url" content="https://lisunny.github.io/2019/09/11/URI与URi傻傻分不清楚？/index.html">
 <meta property="og:site_name" content="LiYang">
-<meta property="og:description" content="相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在Android7.0之后，Google更是取消了file://这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那URI与URi到底有什么区别和联系呢？让我们一起来看下官方文档是怎么介绍的：">
+<meta property="og:description" content="相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在Android7.0之后，Google更是取消了file://这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那URI与URi到底有什么区别和联系呢？让我们看一下两者官方文档的定义之间的对比：   URI URi    统一标识符引用，更多的是一种格式规范 不可变的URI引用，可以理解为一个UR">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-11T07:32:51.455Z">
+<meta property="og:updated_time" content="2019-09-11T08:36:30.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="URI与URi傻傻分不清楚？">
-<meta name="twitter:description" content="相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在Android7.0之后，Google更是取消了file://这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那URI与URi到底有什么区别和联系呢？让我们一起来看下官方文档是怎么介绍的：">
+<meta name="twitter:description" content="相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在Android7.0之后，Google更是取消了file://这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那URI与URi到底有什么区别和联系呢？让我们看一下两者官方文档的定义之间的对比：   URI URi    统一标识符引用，更多的是一种格式规范 不可变的URI引用，可以理解为一个UR">
   <link rel="canonical" href="https://lisunny.github.io/2019/09/11/URI与URi傻傻分不清楚？/">
 
 
@@ -246,7 +246,7 @@
                 
               
 
-              <time title="Created: 2019-09-11 15:14:07 / Modified: 15:32:51" itemprop="dateCreated datePublished" datetime="2019-09-11T15:14:07+08:00">2019-09-11</time>
+              <time title="Created: 2019-09-11 15:14:07 / Modified: 16:36:30" itemprop="dateCreated datePublished" datetime="2019-09-11T15:14:07+08:00">2019-09-11</time>
             </span>
           
             
@@ -286,8 +286,137 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在<code>Android7.0</code>之后，Google更是取消了<span class="label danger">file://</span>这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那<span class="label danger">URI</span>与<span class="label danger">URi</span>到底有什么区别和联系呢？让我们一起来看下官方文档是怎么介绍的：</p>
+        <p>相信在好多时候调用系统页面加载数据时，难免要做URi转Path的操作；尤其是在<code>Android7.0</code>之后，Google更是取消了<span class="label info">file://</span>这种方式访问文件，URi(统一资源标识符)便优雅的出现在了开发者的代码中；那<span class="label info">URI</span>与<span class="label info">URi</span>到底有什么区别和联系呢？让我们看一下两者官方文档的定义之间的对比：</p><table>
+<thead>
+<tr>
+<th>URI</th>
+<th>URi</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>统一标识符引用，更多的是一种格式规范</td>
+<td>不可变的URI引用，可以理解为一个URI的实例，更倾向于指向一种资源</td>
+</tr>
+</tbody></table><a id="more"></a>
 
+<h2 id="URI"><a href="#URI" class="headerlink" title="URI"></a><a href="https://developer.android.com/reference/kotlin/java/net/URI?hl=en" target="_blank" rel="noopener">URI</a></h2><p>在<span class="label info">java.net.URI</span>包中，可细分为</p>
+<blockquote>
+<ul>
+<li>absolute URI（绝对URI）<br>基本格式 <strong>[scheme:]scheme-specific-part[fragment]</strong><blockquote>
+<ul>
+<li>opaque URI（不透明URI）<br> 例如：<strong>mailto:<a href="mailto:java-net@java.sun.com" target="_blank" rel="noopener">java-net@java.sun.com</a></strong></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>hierarchical URI（分级URI）<br>基本格式 <strong>[scheme:][//authority][path][?query][fragment]</strong><blockquote>
+<ul>
+<li>鉴权URI<br>基本格式 <strong>[user-info@]host[:port]</strong></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+<p>URI实例包含一下几种组件：</p>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>scheme</td>
+<td>String</td>
+</tr>
+<tr>
+<td>scheme-specific-part</td>
+<td>String</td>
+</tr>
+<tr>
+<td>authority</td>
+<td>String</td>
+</tr>
+<tr>
+<td>user-info</td>
+<td>String</td>
+</tr>
+<tr>
+<td>host</td>
+<td>String</td>
+</tr>
+<tr>
+<td>port</td>
+<td>int</td>
+</tr>
+<tr>
+<td>path</td>
+<td>String</td>
+</tr>
+<tr>
+<td>query</td>
+<td>String</td>
+</tr>
+<tr>
+<td>fragment</td>
+<td>String</td>
+</tr>
+</tbody></table>
+<p>常用的取组件的方法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//www.java2s.com:8080/yourpath/fileName.html?stove=10&amp;path=32&amp;id=4#harvic</span></span><br><span class="line">https:<span class="comment">//liyang@xxx.xxx.xxx.xxx:xxxx/svn/xxxx</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getAuthority()</td>
+<td>获取Uri中Authority部分 第一个URL的<code>www.java2s.com:8080</code>部分</td>
+</tr>
+<tr>
+<td>getFragment()</td>
+<td>获取Uri中的Fragment部分 第一个URL的<code>harvic</code>部分</td>
+</tr>
+<tr>
+<td>getHost()</td>
+<td>获取Authority中的Host字符串 第一个URL的<code>www.java2s.com</code>部分</td>
+</tr>
+<tr>
+<td>getPath()</td>
+<td>获取Uri中path部分 第一个URL的<code>/yourpath/fileName.html</code>部分</td>
+</tr>
+<tr>
+<td>getPort()</td>
+<td>获取Authority中的Port字符串 第一个URL的<code>8080</code>部分</td>
+</tr>
+<tr>
+<td>getSchemeSpecificPart()</td>
+<td>获取Uri中的scheme-specific-part:部分 第一个URL的<code>//www.java2s.com:8080/yourpath/fileName.html?</code>部分</td>
+</tr>
+<tr>
+<td>getQuery()</td>
+<td>获取Uri中的query部分，第一个URL的<code>stove=10&amp;path=32&amp;id=4</code>部分</td>
+</tr>
+<tr>
+<td>getScheme()</td>
+<td>获取Uri中的scheme字符串部分 第一个URL的<code>http</code>部分</td>
+</tr>
+<tr>
+<td>getUserInfo()</td>
+<td>第二个URL的<code>liyang</code>部分</td>
+</tr>
+</tbody></table>
+<h2 id="URi"><a href="#URi" class="headerlink" title="URi"></a><a href="https://developer.android.com/reference/kotlin/android/net/Uri?hl=en" target="_blank" rel="noopener">URi</a></h2><p>在<span class="label info">android.net.Uri</span>包中,属于是针对Android做了特殊优化的工具类，URI中常用的取组件方法在URi类中都有，并且还添加了不少更便于使用的方法，有兴趣的可以自己好好研读下官方文档</p>
+<hr>
+<p>参考文章：</p>
+<blockquote><p>URi详解之——URi结构与代码提取</p>
+<footer><strong>博文地址</strong><cite><a href="https://blog.csdn.net/harvic880925/article/details/44679239" target="_blank" rel="noopener">blog.csdn.net/harvic880925/article/details/44679239</a></cite></footer></blockquote>
     </div>
 
     
@@ -371,6 +500,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URI"><span class="nav-number">1.</span> <span class="nav-text">URI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URi"><span class="nav-number">2.</span> <span class="nav-text">URi</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
