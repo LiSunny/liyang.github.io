@@ -212,6 +212,196 @@
   
   
   <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://lisunny.github.io/liyang.github.io/2019/09/09/BoardcastReceiver/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liyang.github.io/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiYang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/liyang.github.io/2019/09/09/BoardcastReceiver/" class="post-title-link" itemprop="url">BoardcastReceiver</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-09-09 11:42:58 / Modified: 11:48:52" itemprop="dateCreated datePublished" datetime="2019-09-09T11:42:58+08:00">2019-09-09</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/liyang.github.io/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="什么是BoardcastReceiver？"><a href="#什么是BoardcastReceiver？" class="headerlink" title="什么是BoardcastReceiver？"></a>什么是BoardcastReceiver？</h2><ul>
+<li>简单来说就是iOS中的NSNotification类，主要用来接收系统、自定义的广播，但是又不同于iOS的消息中心</li>
+<li>先进行广播的注册，然后实现接收方法即可</li>
+</ul><h2 id="广播的实现"><a href="#广播的实现" class="headerlink" title="广播的实现"></a>广播的实现</h2><ol>
+<li>继承BoardcastReceiver类，实现自定的receiver</li>
+<li>实现onReceiver方法，来处理接收到的广播信息<br>举个栗子：<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NotificationHandleReceiver</span> <span class="keyword">extends</span> <span class="title">BroadcastReceiver</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> NotificationHandleInterface notificationHandleInterface;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NotificationHandleReceiver</span><span class="params">(NotificationHandleInterface interfaceHandle)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.notificationHandleInterface = interfaceHandle;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceive</span><span class="params">(Context context, Intent intent)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span> This method is called when the BroadcastReceiver is receiving</span></span><br><span class="line">        <span class="comment">// an Intent broadcast.</span></span><br><span class="line"></span><br><span class="line">        notificationHandleInterface.receiverNewNotification();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/liyang.github.io/2019/09/09/BoardcastReceiver/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
+    <link itemprop="mainEntityOfPage" href="https://lisunny.github.io/liyang.github.io/2019/09/09/iMazing/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liyang.github.io/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiYang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+            
+            <a href="/liyang.github.io/2019/09/09/iMazing/" class="post-title-link" itemprop="url">iMazing</a>
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-09-09 10:24:28 / Modified: 11:37:26" itemprop="dateCreated datePublished" datetime="2019-09-09T10:24:28+08:00">2019-09-09</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/liyang.github.io/categories/效率工具/" itemprop="url" rel="index"><span itemprop="name">效率工具</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p>该工具功能类似iTunes，Mac OS 10.14版本iTunes不在提供App下载及管理功能；iMazing应运而生，对开发者来讲可以用这个工具下载手机内App的IPA安装包，具体流程如下：<br><a href="https://www.notion.so/heavenli/iMazing-838e6174deba436fb92a5a3c3ff1d287#a45780739e114613ae32c821ceae5b62" target="_blank" rel="noopener">使用教程传送门</a></p>
+</blockquote>
+
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+          <div class="post-eof"></div>
+        
+      </footer>
+  </div>
+  
+  
+  
+  </article>
+
+    
+        <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block home">
     <link itemprop="mainEntityOfPage" href="https://lisunny.github.io/liyang.github.io/2019/09/09/Charles/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -522,7 +712,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-10 15:12:05" itemprop="dateModified" datetime="2019-09-10T15:12:05+08:00">2019-09-10</time>
+                <time title="Modified: 2019-09-10 15:14:18" itemprop="dateModified" datetime="2019-09-10T15:14:18+08:00">2019-09-10</time>
               </span>
             
           
@@ -551,24 +741,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Android相关App打包keystore都在项目根目录中<br>相关别名、密码如下：</p>
-<table>
-<thead>
-<tr>
-<th>key</th>
-<th>密码</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>keyPassword</td>
-<td>NEAT123</td>
-</tr>
-<tr>
-<td>storePassword</td>
-<td>NEAT123</td>
-</tr>
-</tbody></table>
-
+          The article has been encrypted, please enter your password to view.<br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/liyang.github.io/2019/09/06/Android开发keystore/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
@@ -856,7 +1038,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-09-10 11:03:12" itemprop="dateModified" datetime="2019-09-10T11:03:12+08:00">2019-09-10</time>
+                <time title="Modified: 2019-09-10 15:16:24" itemprop="dateModified" datetime="2019-09-10T15:16:24+08:00">2019-09-10</time>
               </span>
             
           
@@ -967,7 +1149,7 @@
         
           <a href="/liyang.github.io/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -993,7 +1175,7 @@
             <a href="/liyang.github.io/tags/">
           
         
-        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">tags</span>
         </a>
       </div>

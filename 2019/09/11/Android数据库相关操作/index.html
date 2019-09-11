@@ -55,14 +55,19 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="LiYang">
-<meta property="og:url" content="https://lisunny.github.io/archives/2019/09/index.html">
+  <meta name="description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说: android.database.sqliteOverview1234Contains the SQLite database management">
+<meta name="keywords" content="数据库,Sqlite3">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android数据库相关操作">
+<meta property="og:url" content="https://lisunny.github.io/2019/09/11/Android数据库相关操作/index.html">
 <meta property="og:site_name" content="LiYang">
+<meta property="og:description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说: android.database.sqliteOverview1234Contains the SQLite database management">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-09-11T01:14:56.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LiYang">
-  <link rel="canonical" href="https://lisunny.github.io/archives/2019/09/">
+<meta name="twitter:title" content="Android数据库相关操作">
+<meta name="twitter:description" content="在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，这时候就不得不用到Android原生的数据库操作库android.database和android.database.sqlite,事实上这两个工具库是有不同的应用场景的，如官方文档所说: android.database.sqliteOverview1234Contains the SQLite database management">
+  <link rel="canonical" href="https://lisunny.github.io/2019/09/11/Android数据库相关操作/">
 
 
 <script id="page-configurations">
@@ -70,13 +75,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>Archive | LiYang</title>
+  <title>Android数据库相关操作 | LiYang</title>
   
 
 
@@ -190,24 +195,6 @@
 
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 </nav>
 </div>
     </header>
@@ -225,330 +212,134 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        
-        
-        
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="https://lisunny.github.io/liyang.github.io/2019/09/11/Android数据库相关操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiYang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/liyang.github.io/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="LiYang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Android数据库相关操作
+
           
-        
-        <span class="collection-header">Um..! 19 posts in total. Keep on posting.</span>
-      </div>
-      
+        </h1>
 
-      
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-  
-  
+              
+                
+              
 
-  
+              <time title="Created: 2019-09-11 08:37:28 / Modified: 09:14:56" itemprop="dateCreated datePublished" datetime="2019-09-11T08:37:28+08:00">2019-09-11</time>
+            </span>
+          
+            
+
+            
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/liyang.github.io/categories/Android/" itemprop="url" rel="index"><span itemprop="name">Android</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            <span class="post-meta-item" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+        </div>
+      </header>
+
     
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在应用程序中有时因为业务需要，可能会在本地创建一个小型数据库，<br>这时候就不得不用到Android原生的数据库操作库<span class="label info">android.database</span>和<span class="label info">android.database.sqlite</span>,事实上这两个工具库是有不同的应用场景的，如官方文档所说:</p>
+<figure class="highlight plain"><figcaption><span>android.database.sqlite</span><a href="https://developer.android.google.cn/reference/android/database/sqlite/package-summary?hl=en" target="_blank" rel="noopener">Overview</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Contains the SQLite database management classes that an application would use to manage 		its own private database.</span><br><span class="line">Applications use these classes to manage private databases. If creating a content provider,&lt;/br&gt; you will probably have to use these classes to create and manage your own database to store content. See Content Providers to learn the conventions for implementing a content provider. If you are working with data sent to you by a provider, you do not use these SQLite classes, but instead use the generic android.database classes.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
-  
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
+    
+    
+    
         
-          <a class="post-title-link" href="/liyang.github.io/2019/09/11/URI与URi傻傻分不清楚？/" itemprop="url">
-            <span itemprop="name">URI与URi傻傻分不清楚？</span>
-          </a>
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/liyang.github.io/tags/数据库/" rel="tag"># 数据库</a>
+            
+              <a href="/liyang.github.io/tags/Sqlite3/" rel="tag"># Sqlite3</a>
+            
+          </div>
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-11T15:14:07+08:00"
-              content="2019-09-11">
-          09-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-          <a class="post-title-link" href="/liyang.github.io/2019/09/11/Android数据库相关操作/" itemprop="url">
-            <span itemprop="name">Android数据库相关操作</span>
-          </a>
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/liyang.github.io/2019/09/10/hexo写作指南/" rel="next" title="hexo写作指南">
+                  <i class="fa fa-chevron-left"></i> hexo写作指南
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+                <a href="/liyang.github.io/2019/09/11/URI与URi傻傻分不清楚？/" rel="prev" title="URI与URi傻傻分不清楚？">
+                  URI与URi傻傻分不清楚？ <i class="fa fa-chevron-right"></i>
+                </a>
+              
+            </div>
+          </div>
         
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-11T08:37:28+08:00"
-              content="2019-09-11">
-          09-11
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/10/hexo写作指南/" itemprop="url">
-            <span itemprop="name">hexo写作指南</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-10T11:07:46+08:00"
-              content="2019-09-10">
-          09-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/09/关于Git版本控制的一些想法/" itemprop="url">
-            <span itemprop="name">关于Git版本控制的一些想法</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-09T13:48:30+08:00"
-              content="2019-09-09">
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/09/HealthKit阅读理解/" itemprop="url">
-            <span itemprop="name">HealthKit阅读理解</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-09T13:35:01+08:00"
-              content="2019-09-09">
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/09/Android待学习知识点/" itemprop="url">
-            <span itemprop="name">Android待学习知识点</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-09T13:31:31+08:00"
-              content="2019-09-09">
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/09/界面间传值/" itemprop="url">
-            <span itemprop="name">界面间传值</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-09T12:02:46+08:00"
-              content="2019-09-09">
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/09/Activity的生命周期/" itemprop="url">
-            <span itemprop="name">Activity的生命周期</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-09T11:54:33+08:00"
-              content="2019-09-09">
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/09/RadioGroup相关小知识/" itemprop="url">
-            <span itemprop="name">RadioGroup相关小知识</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-09T11:52:34+08:00"
-              content="2019-09-09">
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-  
-  
-
-  
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/liyang.github.io/2019/09/09/自定义AlertDialog/" itemprop="url">
-            <span itemprop="name">自定义AlertDialog</span>
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-09-09T11:49:45+08:00"
-              content="2019-09-09">
-          09-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-
-    </div>
+      </footer>
+    
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/liyang.github.io/archives/2019/09/page/2/">2</a><a class="extend next" rel="next" href="/liyang.github.io/archives/2019/09/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -567,6 +358,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
